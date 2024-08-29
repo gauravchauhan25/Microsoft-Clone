@@ -1,0 +1,617 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  color: #000;
+  background-color: #fff;
+  font-family: segoe UI;
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: fixed; */
+  background-color: #fff;
+  box-shadow: 0 0 2rem #aaa;
+  padding: 3px;
+  height: 3.4rem;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 400;
+  z-index: 99;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.nav-logo img {
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 100%;
+  margin-left: 4rem;	
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.nav-items a {
+  margin-right: 0.9rem;
+}
+
+
+/* .nav-items a::after {
+    content: ' ';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background-color: #000;
+      border-radius: 5px;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .5s;
+}
+
+.nav-items a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform .5s;
+} */
+
+.signin-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  width: 20%;
+  font-weight: 400;
+ position: absolute;
+  right: 2rem;
+}
+
+#all-microsoft {
+  display: flex;
+  align-items: center;
+}
+
+.signin:focus {
+  border: 1px dashed #131313;
+  padding: 0.6rem;
+}
+
+.person-add {
+  background-color: #dfdede;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.person-add:hover {
+  background-color: #c9c9c9;
+  transition: all 500ms ease;
+}
+
+.nav-icon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  width: 50%;
+}
+
+.nav-icon span {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-right: 0.5rem;
+}
+
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Slider CSS */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  box-shadow: 0 0 2rem #eee;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: relative;
+  color: #222121;
+  font-size: 18px;
+}
+
+
+.prev:hover {
+  margin-right: 1rem;
+  transition: all 800ms ease;
+}
+
+.next:hover {
+  margin-left: 1rem;
+  transition: all 800ms ease;
+}
+
+@keyframes fade {
+  from {
+        opacity: .4
+  }
+
+  to {
+        opacity: 1
+  }
+}
+
+@keyframes slide-in-from-left {
+  0% { tranform: translate(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes slide-out-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slide-in-from-right {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes slide-out-right {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.slide-in-from-left {
+  animation: slide-in-from-left 0.5s forwards;
+}
+
+.slide-out-left {
+  animation: slide-out-left 0.5s forwards;
+}
+
+.slide-in-from-right {
+  animation: slide-in-from-right 0.5s forwards;
+}
+
+/* All microsoft box popup */
+.all-microsoft-box {
+  position: absolute;
+  top: 3rem;
+  justify-content: space-between;
+  background-color: #eeeded;
+  margin: 0 3rem;
+  width: 93%;
+  z-index: 99;
+  display: none;
+}
+
+.all-microsoft-box-display {
+  display: block;
+}
+
+.category {
+  display: flex;
+  padding: 0.05rem 1rem;
+  padding-bottom: 1rem;
+}
+
+.all-microsoft-box ul{
+  margin: 0 1rem;
+}
+
+.category ul li a {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #000;
+  margin-right: 2.62rem;
+  line-height: 2rem;
+}
+
+.category ul li a:hover {
+  text-decoration: underline;
+}
+
+.category ul li .bold {
+  font-weight: 500;
+}
+
+.category ul li .bold:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
+.site-map {
+  background-color: #dbdbdb;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.site-map a {
+  font-size: 0.85rem;
+  color: #4b4949;
+}
+
+.site-map a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* hero section*/
+.hero-section {
+  /* background-image: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP4-1399x600"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.box {
+  position: absolute;
+  top: 100px;
+  width: 40%;
+  box-sizing: border-box;
+  background-color: #fff;
+  /* border: 1px solid #000; */
+  padding: 3rem;
+  margin-left: 4rem;
+  color: #1a1919;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-yellow {
+  background-color: #ffb900;
+  width: 50px;
+  height: auto;
+}
+
+.btn-yellow:hover {
+  background-color: #dfa916;
+}
+
+.btn-primary {
+  background-color: #0067b8;
+  width: 30%;
+  color: #fff;
+  height: auto;
+}
+
+.btn-primary:hover {
+  background-color: #0f7acc;
+}
+
+.box h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+}
+
+.box p {
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+/* 
+.hero-icon {
+  position: relative;
+  top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: -3.5rem;
+}
+
+.hero-icon i {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-right: 2rem;
+} */
+
+section {
+   margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    height: auto;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.links-logo {
+  display: grid;
+  align-items: center;
+  height: auto;
+  width: 15%;
+  text-align: center;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.link-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0067b8;
+  text-decoration: underline;
+}
+
+
+
+/* SHOP SECTION  */
+.shop-section {
+  /* position: relative; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.shop-item-box {
+  background-color: #ffffff;
+  /* box-shadow: 0 0.2rem 0 #d4d4d4; */
+    width: 24%;
+    height: 500px;
+    padding: 1rem;
+    margin: 0 0.3rem;
+    cursor: pointer;
+}
+
+.shop-img img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.shop-info h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.shop-info p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+
+.shop-info button {
+    background-color: #0067b8;
+    padding: 0.7rem;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.shop-info button:hover {
+    background-color: #0f7acc;
+}
+
+.shop-info a {
+    color: #0067b8;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.copilot-promo-img img{
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+}
+
+.heading {
+  margin-left: 4rem;
+  font-size: 1.8rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.follow {
+  display: flex;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.follow-ms {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.social-icons {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.social-icons i {
+  margin-left: 1.5rem;
+  font-weight: 400;
+}
+
+.back-to-top {
+  position: relative;
+  top: -2rem;
+  left: 88%;
+  background-color: #ccc;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  background-color: #fff;
+}
+
+.back-top:hover {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ======Footer======== */
+footer {
+  background-color: #ececec;
+  color: #616161;
+  height: auto;
+  padding: 2.5rem 0;
+  font-size: 0.7rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.foot-panel {
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+ul {
+  margin-top: 2rem;
+}
+
+ul a {
+  display: block;
+  margin-top: 0.9rem;
+  color: #616161;
+}
+
+.fpara {
+  color: #616161;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.foot-panel2 {
+  color: #616161;
+  display: flex;
+  margin-right: 1rem;
+  margin: 0 auto;
+  width: 90%;
+  height: 10px;
+  justify-content: space-between;
+}
+
+.lang a {
+  color: #616161;
+  margin-right: 1rem;
+}
+
+.pages a{
+  color: #616161;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 1300px) {
+/* .hero-icon {
+  margin-top: -10rem;
+} */
+}
+
+
+@media screen and (max-width: 1080px) {
+  /* .hero-icon {
+    margin-top: -18rem;
+  } */
+  section {
+    margin-top: 3rem;
+     margin-bottom: 3rem;
+ }
+
+  .shop-section {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+.shop-item-box {
+    width: 40%;
+    /* height: 550px; */
+    margin-bottom: 4rem;
+}
+}
+
+
+@media screen and (max-width: 680px) {
+  .shop-section {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+.shop-item-box {
+  margin: 0 2rem;
+    width: 85%;
+    /* height: 550px; */
+    margin-bottom: 4rem;
+}
+}
