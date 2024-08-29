@@ -50,7 +50,7 @@ function autoShowSlides() {
       }
 
       slides[slideIndex - 1].style.display = "block";
-      // setTimeout(autoShowSlides, 5000); // Change image every 3 seconds
+      setTimeout(autoShowSlides, 5000); // Change image every 3 seconds
 }
 
 const popupBox = document.querySelector('#popup-box');
